@@ -41,6 +41,11 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y autoremove
 
+## Ubuntu18.04 error "too early for operation, device not yet seeded or device model not acknowledged"
+## https://www.footfoot.tokyo/article104/ubutnu-18-04-too-early-for-operation
+sudo apt-get -y purge snapd
+sudo apt-get -y install snapd
+
 ## Setup your sources.list
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
