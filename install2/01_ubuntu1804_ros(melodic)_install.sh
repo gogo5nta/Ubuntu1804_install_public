@@ -84,7 +84,7 @@ sudo apt -y install  ros-melodic-desktop-full
 ## Initialize rosdep
 echo "## Initialize rosdep"
 sudo apt install python-rosdep
-sudo rosdep init
+sudo rosdep init　
 ## 上記のコマンドを実行して以下のエラーが出る場合は、
 ## Traceback (most recent call last):
 ## File “/usr/bin/rosdep”, line 3, in <module>
