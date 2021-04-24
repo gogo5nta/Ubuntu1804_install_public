@@ -4,7 +4,10 @@
 ## *** Reffer ***
 ## ・Ubuntu18.04: ROS Melodicのインストール
 ##   https://demura.net/robot/16518.html
-## **** Reffer 以前 ***
+## ・ubuntu18.04.3にROSをインストールする
+##   https://qiita.com/ezokitsune/items/2e7294b71b869d2909f2
+
+## **** Reffer 以前(ubuntu16.04+ROS(kinetic) ***
 ## ・Ubuntu install of ROS Melodic
 ##   http://wiki.ros.org/melodic/Installation/Ubuntu
 ## ・ROS Melodicのインストール
@@ -107,7 +110,7 @@ sudo apt -y install python-rosinstall python-rosinstall-generator python-wstool 
 ## Create and initialize the catkin ws
 ## https://demura.net/misc/16533.html
 echo "## Create and initialize the catkin ws"
-mkdir -p ~/catkin_ws
+mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws
 catkin init
 
@@ -121,5 +124,10 @@ echo "## Add the catkin_workspace to your ROS environment"
 echo "## Add the catkin_workspace to your ROS environment" >> ~/.bashrc
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
-## Step 11: Check the ROS environment variables
+## Check the ROS environment variables
+echo "## Check the ROS environment variables"
 export | grep ROS
+
+## Check roscore
+echo "## Check roscore"
+roscore
