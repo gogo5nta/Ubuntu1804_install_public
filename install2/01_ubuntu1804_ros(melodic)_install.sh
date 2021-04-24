@@ -36,15 +36,15 @@
 #Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
 #-----------------------------------------
 
-## general
-sudo apt -y update
-sudo apt -y upgrade
-sudo apt -y autoremove
-
 ## Ubuntu18.04 error "too early for operation, device not yet seeded or device model not acknowledged"
 ## https://www.footfoot.tokyo/article104/ubutnu-18-04-too-early-for-operation
 sudo apt -y purge snapd
 sudo apt -y install snapd
+
+## general
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y autoremove
 
 ## Setup your sources.list
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
