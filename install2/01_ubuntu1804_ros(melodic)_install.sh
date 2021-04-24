@@ -49,7 +49,8 @@
 # sudo rm /var/lib/apt/lists/lock
 # sudo rm /var/cache/apt/archives/lock
 
-## 【注意】Ubuntu18.04をインストール後、ソフトウェアの更新を行わない場合、snapdで下記エラーが発生。その場合、コメントアウトして以下の2行を事項
+## 【注意】Ubuntu18.04.2をインストール後、snapdで下記エラーが発生。その場合、コメントアウトして以下の2行を事項
+## 【注意】ubuntu-ja-18.04.2-desktop-amd64.iso (Ubuntu18.04.2のJP)でインストールすると発生。素直にUbuntu18.04.3のJPを利用する事
 ## Ubuntu18.04 error "too early for operation, device not yet seeded or device model not acknowledged"
 ## https://www.footfoot.tokyo/article104/ubutnu-18-04-too-early-for-operation
 #sudo apt -y purge snapd
