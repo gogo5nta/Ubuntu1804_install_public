@@ -2,6 +2,9 @@
 # update 2021.04.24
 
 ## *** Reffer ***
+## ・Ubuntu18.04: ROS Melodicのインストール
+##   https://demura.net/robot/16518.html
+## **** Reffer 以前 ***
 ## ・Ubuntu install of ROS Melodic
 ##   http://wiki.ros.org/melodic/Installation/Ubuntu
 ## ・ROS Melodicのインストール
@@ -36,34 +39,58 @@
 #Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
 #-----------------------------------------
 
+## If you will see the following error in the terminal:
+## E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
+## It can be solved by running following command:
+## https://qiita.com/jizo/items/9496496a3156dd39d91a
+# sudo rm /var/lib/apt/lists/lock
+# sudo rm /var/cache/apt/archives/lock
+
 ## Ubuntu18.04 error "too early for operation, device not yet seeded or device model not acknowledged"
 ## https://www.footfoot.tokyo/article104/ubutnu-18-04-too-early-for-operation
 sudo apt -y purge snapd
 sudo apt -y install snapd
 
 ## general
+echo "## general"
 sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y autoremove
 
 ## Setup your sources.list
+echo "## Setup your sources.list"
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
 ## Setup your keys
+echo "## Setup your keys"
 ## apt-key proxy: https://qiita.com/nmatsui/items/816051fe6445db116e9a
 #sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --keyserver-option http-proxy=http://x:y@proxy:port --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 ## To be sure that your Ubuntu package index is up to date, type the following command
+echo "# To be sure that your Ubuntu package index is up to date, type the following command"
 sudo apt -y update
-
-## If you will see the following error in the terminal:
-## E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
-## It can be solved by running following command:
-# sudo rm /var/lib/apt/lists/lock
+sudo apt -y upgrade
 
 ## Install ros-Melodic-desktop-full
+echo "## Install ros-Melodic-desktop-full"
 sudo apt -y install  ros-melodic-desktop-full
+
+## Initialize rosdep
+echo "## Initialize rosdep"
+sudo apt install python-rosdep
+sudo rosdep init
+## 上記のコマンドを実行して以下のエラーが出る場合は、
+## Traceback (most recent call last):
+## File “/usr/bin/rosdep”, line 3, in <module>
+## from rosdep2.main import rosdep_main
+## ModuleNotFoundError: No module named ‘rosdep2’
+## 以下のコマンドを実行して必要なpythonモジュールをインストールする。
+## sudo -H pip3 install -U rosdep
+
+## rosdep update
+echo "## rosdep update"
+rosdep update
 
 # Environment setup
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
@@ -74,22 +101,25 @@ source ~/.bashrc
 # source /opt/ros/melodic/setup.bash
 
 ## Install necessary dependencies
-sudo apt -y install  python-rosdep python-rosinstall-generator python-wstool python-rosinstall python-roslaunch build-essential  cmake
+echo "## Install necessary dependencies"
+sudo apt -y install python-rosinstall python-rosinstall-generator python-wstool build-essential python-catkin-tools
 
-## Initialize rosdep
-sudo rosdep init
-rosdep update
+## Create and initialize the catkin ws
+## https://demura.net/misc/16533.html
+echo "## Create and initialize the catkin ws"
+mkdir -p ~/catkin_ws
+cd ~/catkin_ws
+catkin init
 
-## Create and initialize the catkin workspace
-mkdir -p ~/catkin_workspace/src
-cd ~/catkin_workspace/src
-catkin_init_workspace
-cd ~/catkin_workspace/
-catkin_make
+## bulid catkin_ws
+echo "## bulid catkin_ws"
+cd ~/catkin_ws
+catkin build
 
 ## Add the catkin_workspace to your ROS environment
+echo "## Add the catkin_workspace to your ROS environment"
 echo "## Add the catkin_workspace to your ROS environment" >> ~/.bashrc
-echo "source ~/catkin_workspace/devel/setup.bash" >> ~/.bashrc
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 ## Step 11: Check the ROS environment variables
 export | grep ROS
