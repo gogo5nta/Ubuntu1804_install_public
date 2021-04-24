@@ -1,6 +1,11 @@
 #!/bin/bash
 # update 2021.04.24
 
+# Check OS ver and Kernel ver
+echo "# Check OS ver and Kernel ver"
+cat /etc/os-release
+uname -r
+
 # rename English holder
 echo "# rename English holder"
 LANG=C xdg-user-dirs-gtk-update
