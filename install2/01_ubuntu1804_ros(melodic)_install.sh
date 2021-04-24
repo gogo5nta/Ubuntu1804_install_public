@@ -37,14 +37,14 @@
 #-----------------------------------------
 
 ## general
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y autoremove
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y autoremove
 
 ## Ubuntu18.04 error "too early for operation, device not yet seeded or device model not acknowledged"
 ## https://www.footfoot.tokyo/article104/ubutnu-18-04-too-early-for-operation
-sudo apt-get -y purge snapd
-sudo apt-get -y install snapd
+sudo apt -y purge snapd
+sudo apt -y install snapd
 
 ## Setup your sources.list
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -55,7 +55,7 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 ## To be sure that your Ubuntu package index is up to date, type the following command
-sudo apt-get -y update
+sudo apt -y update
 
 ## If you will see the following error in the terminal:
 ## E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
@@ -63,7 +63,7 @@ sudo apt-get -y update
 # sudo rm /var/lib/apt/lists/lock
 
 ## Install ros-Melodic-desktop-full
-sudo apt-get -y install  ros-melodic-desktop-full
+sudo apt -y install  ros-melodic-desktop-full
 
 # Environment setup
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
@@ -74,7 +74,7 @@ source ~/.bashrc
 # source /opt/ros/melodic/setup.bash
 
 ## Install necessary dependencies
-sudo apt-get -y install  python-rosdep python-rosinstall-generator python-wstool python-rosinstall python-roslaunch build-essential  cmake
+sudo apt -y install  python-rosdep python-rosinstall-generator python-wstool python-rosinstall python-roslaunch build-essential  cmake
 
 ## Initialize rosdep
 sudo rosdep init
