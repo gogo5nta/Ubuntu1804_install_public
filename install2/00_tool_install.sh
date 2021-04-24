@@ -2,16 +2,21 @@
 # update 2021.04.24
 
 # rename English holder
+echo "# rename English holder"
 LANG=C xdg-user-dirs-gtk-update
 
 # install chromium-browser
-sudo apt-get install -y chromium-browser
+echo "# install chromium-browser"
+sudo apt-get -y install chromium-browser
 
 # install terminator
-sudo apt-get install -y terminator
+echo "# install terminator"
+sudo apt-get -y install terminator
 
-# ssh
-sudo apt-get install -y openssh-server
+# install ssh
+echo "# install ssh"
+sudo apt-get -y install openssh-server
 
-# good tool gnome-tweaks
-sudo apt-get install -y gnome-tweaks
+# install good tool gnome-tweaks
+echo "# install good tool gnome-tweaks"
+sudo apt-get -y install gnome-tweaks
