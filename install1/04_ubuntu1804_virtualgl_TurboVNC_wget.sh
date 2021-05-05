@@ -41,7 +41,7 @@ sudo dpkg -i virtualgl_*_amd64.deb
 
 # setup virtualgl
 # 途中の質問は右を参考 https://virtualgl.org/vgldoc/2_2_1/#hd005001
-# 1, y, y, y, x 
+# 1, y, n, n, n, x 
 # $ sudo /opt/VirtualGL/bin/vglserver_config
 
 # start desktop
