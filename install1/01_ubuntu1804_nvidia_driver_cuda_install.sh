@@ -7,6 +7,7 @@
 # --------------------------------------------------------
 # HP通りやる。ただしPytorch v1.7.1を使用するため★cuda-11-0と指定★
 # URL: https://qiita.com/Wisteria30/items/6f1e35e600e93ff2c54b
+# URL: https://note.com/altbridgetech/n/ne5a320213280
 # URL: https://medium.com/@exesse/cuda-10-1-installation-on-ubuntu-18-04-lts-d04f89287130
 # URL: https://qiita.com/Navier/items/ec0562e42d8c6e2f504a
 #
@@ -22,6 +23,8 @@
 
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
 sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda-repo-ubuntu1804-11-0-local_11.0.2-450.51.05-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-0-local_11.0.2-450.51.05-1_amd64.deb
 #sudo apt-key adv --keyserver-option http-proxy=http://x:y@proxy:port --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 sudo add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
@@ -31,7 +34,6 @@ sudo apt update
 sudo apt -y install cuda-drivers
 #sudo apt -y --no-install-recommends cuda-10-2
 sudo apt -y --no-install-recommends cuda-11-1
-sudo apt -y --no-install-recommends cu
 
 # 以下を.bashrcに追加
 # export PATH="/usr/local/cuda/bin:$PATH"
