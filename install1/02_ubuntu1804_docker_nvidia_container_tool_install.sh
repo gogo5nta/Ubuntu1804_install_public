@@ -39,10 +39,10 @@ docker -v
 # NVIDIA container toolkitを使って、dockerのコンテナ上でcudaを動かす
 # URL:https://qiita.com/Hiroaki-K4/items/c1be8adba18b9f0b4cef
 # --------------------------------------------------------
-# 環境
+# 環境 (2021.05.05)
 # Ubuntu 18.04
-# docker 19.03
-# nvidia driver 450.36
+# docker 20.10.6
+# nvidia driver 465.19
 
 # Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
@@ -53,7 +53,8 @@ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 
 # 確認(docker --gpus)
-sudo docker run --gpus all nvidia/cuda:10.1-base-ubuntu18.04 nvidia-smi
+# sudo docker run --gpus all nvidia/cuda:10.1-base-ubuntu18.04 nvidia-smi
+sudo docker run --gpus all nvidia/cuda:11.0-base-ubuntu18.04 nvidia-smi
 
 # Dockerコマンドをsudoなしで実行する方法
 # URL:https://qiita.com/DQNEO/items/da5df074c48b012152ee
