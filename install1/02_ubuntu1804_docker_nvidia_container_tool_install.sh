@@ -57,14 +57,17 @@ sudo systemctl restart docker
 sudo docker run --gpus all nvidia/cuda:11.0-base-ubuntu18.04 nvidia-smi
 
 # Dockerコマンドをsudoなしで実行する方法
+# URL:https://insilico-notebook.com/docker-run-without-sudo/
 # URL:https://qiita.com/DQNEO/items/da5df074c48b012152ee
 # dockerグループがなければ作る
 sudo groupadd docker
 
 # 現行ユーザをdockerグループに所属させる
-sudo gpasswd -a $USER docker
+sudo usermod -aG docker $USER 
+newgrp docker 
 
 # dockerデーモンを再起動する (CentOS7の場合)
 sudo systemctl restart docker
 
-# exitして再ログインすると反映される。
+# test
+docker run hello-world 
