@@ -28,66 +28,59 @@ sudo dpkg -i virtualgl_*_amd64.deb
 # -----------------------------------------------------------------------------
 # *** ここからはCUIで実施 ***
 # -----------------------------------------------------------------------------
-# stop desktop
+# echo "stop desktop"
 # --- ubuntu 16.04 ---
-# Ctl + Alt + F1でCUIに移動。事前に文字化け対策必要
-# sudo systemctl stop lightdm
+# echo "Ctl + Alt + F1でCUIに移動。事前に文字化け対策必要"
+# $ sudo systemctl stop lightdm
 
 # --- ubuntu 18.04 ---
-# Ctl + Alt + F3でCUIに移動。事前に文字化け対策必要
-# sudo systemctl stop gdm
-## sudo systemctl isolate multi-user.target
+# echo "Ctl + Alt + F3でCUIに移動。事前に文字化け対策必要"
+# $ sudo systemctl stop gdm
 
-
-# setup virtualgl
-# 途中の質問は右を参考 https://virtualgl.org/vgldoc/2_2_1/#hd005001
-# 1, y, n, n, n, x 
+# echo "setup virtualgl"
+# echo "途中の質問は右を参考 https://virtualgl.org/vgldoc/2_2_1/#hd005001"
+# echo "1, y, n, n, n, x "
 # $ sudo /opt/VirtualGL/bin/vglserver_config
 
-# start desktop
+# echo "start desktop"
 # --- ubuntu 16.04 ---
-# sudo systemctl start lightdm
+# $ sudo systemctl start lightdm
 
 # --- ubuntu 18.04 ---
-# sudo systemctl start gdm
-## $ sudo systemctl isolate graphical.target
+# $ sudo systemctl start gdm
 
-# おまじない（入力するとフリーズ?)
-## xauth merge /etc/opt/VirtualGL/vgl_xauth_key
-
-# GUIに移動
-# install turboVNC
+# echo "install turboVNC"
 # $ sudo dpkg -i turbovnc_*_amd64.deb
  
-# start TurboVNC
-# 初回はパスワード登録。パスワード文字列長が8に制限されているのに注意
+# echo "start TurboVNC"
+# echo "初回はパスワード登録。パスワード文字列長が8に制限されているのに注意"
 # $ /opt/TurboVNC/bin/vncserver -depth 24
 
-# 起動中のVNCを確認
-# 参考:https://qiita.com/Sawahashi/items/156be0baaf6384884f3d
+# echo "起動中のVNCを確認"
+# echo "参考:https://qiita.com/Sawahashi/items/156be0baaf6384884f3d"
 # $ /opt/TurboVNC/bin/vncserver -list
 
-# stop TurboVNC
+# echo "stop TurboVNC"
 # $ /opt/TurboVNC/bin/vncserver -kill :1
 
-# windowsでTurboVNCによりログインする時
-# https://sourceforge.net/projects/turbovnc/files/2.2.6/
-# 上記URLからTurboVNC-2.2.6-x64.exeをダウンロード＆インストール＆TurboVNCを起動
-# ubuntu側の/home/username/.vnc/xxx.logにポート番号を記載(例:5901など)
-# 例： 192.168.0.44:5902
-# 例： 192.168.0.44:2
+## windowsでTurboVNCによりログインする時
+## https://sourceforge.net/projects/turbovnc/files/2.2.6/
+## 上記URLからTurboVNC-2.2.6-x64.exeをダウンロード＆インストール＆TurboVNCを起動
+## ubuntu側の/home/username/.vnc/xxx.logにポート番号を記載(例:5901など)
+## 例： 192.168.0.44:5902
+## 例： 192.168.0.44:2
 
-# ★注意★ vncをログインして黒画面が出たら(anacondaインストール後)
-# この場合は Anaconda が悪さをしているようだが、Anaconda を使っていない場合でも同様な問題が起こることがある。
-# http://penguinitis.g1.xrea.com/computer/linux/VNC.html
-#　↓
-#Anacondaをインストール後、.bashrcの以下がコメントしているかチェック
-##export PATH="/root/anaconda3/bin:$PATH"
+## ★注意★ vncをログインして黒画面が出たら(anacondaインストール後)
+## この場合は Anaconda が悪さをしているようだが、Anaconda を使っていない場合でも同様な問題が起こることがある。
+## http://penguinitis.g1.xrea.com/computer/linux/VNC.html
+##　↓
+## Anacondaをインストール後、.bashrcの以下がコメントしているかチェック
+## export PATH="/root/anaconda3/bin:$PATH"
 
-# --- ここからは必要なら実施 ---
-# turbovncの起動エイリアスを作成. nano ~/.bashrcを実行し
-# alias TVNC='/opt/TurboVNC/bin/vncserver -depth 24' 
+## --- ここからは必要なら実施 ---
+## turbovncの起動エイリアスを作成. nano ~/.bashrcを実行し
+## alias TVNC='/opt/TurboVNC/bin/vncserver -depth 24' 
 
-# windowsのおすすめsshソフト
-# rlogin    > https://qiita.com/pocket8137/items/e294715b5154487b9ae0
-# MobaXterm > https://qiita.com/mkasahara/items/c029154b5436913b20e0
+## windowsのおすすめsshソフト
+## rlogin    > https://qiita.com/pocket8137/items/e294715b5154487b9ae0
+## MobaXterm > https://qiita.com/mkasahara/items/c029154b5436913b20e0
