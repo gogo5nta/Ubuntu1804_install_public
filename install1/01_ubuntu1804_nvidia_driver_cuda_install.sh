@@ -27,7 +27,7 @@ sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda
 sudo add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
 sudo apt update
 # 自動で合うdriverを入れてくれる
-# sudo ubuntu-drivers autoinstallだと435, 以下コマンドだと4XXのインストールを確認
+# sudo ubuntu-drivers autoinstallだと435, 以下コマンドだと465のインストールを確認(2021.05.05)
 sudo apt -y install cuda-drivers
 #sudo apt -y --no-install-recommends cuda-10-2
 sudo apt -y --no-install-recommends cuda-11-1
