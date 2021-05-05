@@ -72,6 +72,7 @@ sudo dpkg -i virtualgl_*_amd64.deb
 # 上記URLからTurboVNC-2.2.6-x64.exeをダウンロード＆インストール＆TurboVNCを起動
 # ubuntu側の/home/username/.vnc/xxx.logにポート番号を記載(例:5901など)
 # 例： 192.168.0.44:5902
+# 例： 192.168.0.44:2
 
 # ★注意★ vncをログインして黒画面が出たら(anacondaインストール後)
 # この場合は Anaconda が悪さをしているようだが、Anaconda を使っていない場合でも同様な問題が起こることがある。
