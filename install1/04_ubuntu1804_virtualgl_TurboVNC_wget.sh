@@ -50,11 +50,10 @@ sudo dpkg -i virtualgl_*_amd64.deb
 
 # --- ubuntu 18.04 ---
 # sudo systemctl start gdm
-## $ sudo systemctl start graphical.target
 ## $ sudo systemctl isolate graphical.target
 
 # おまじない（入力するとフリーズ?)
-### $ xauth merge /etc/opt/VirtualGL/vgl_xauth_key
+## xauth merge /etc/opt/VirtualGL/vgl_xauth_key
 
 # GUIに移動
 # install turboVNC
@@ -86,7 +85,9 @@ sudo dpkg -i virtualgl_*_amd64.deb
 ##export PATH="/root/anaconda3/bin:$PATH"
 
 # --- ここからは必要なら実施 ---
-# make alias
 # turbovncの起動エイリアスを作成. nano ~/.bashrcを実行し
 # alias TVNC='/opt/TurboVNC/bin/vncserver -depth 24' 
 
+# windowsのおすすめsshソフト
+# rlogin    > https://qiita.com/pocket8137/items/e294715b5154487b9ae0
+# MobaXterm > https://qiita.com/mkasahara/items/c029154b5436913b20e0
