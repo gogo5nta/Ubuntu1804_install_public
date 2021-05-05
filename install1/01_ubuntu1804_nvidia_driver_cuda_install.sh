@@ -33,7 +33,7 @@ sudo apt update
 # sudo ubuntu-drivers autoinstallだと435, 以下コマンドだと465のインストールを確認(2021.05.05)
 sudo apt -y install cuda-drivers
 #sudo apt -y --no-install-recommends cuda-10-2
-sudo apt -y --no-install-recommends cuda-11-1
+sudo apt -y --no-install-recommends cuda-11-0
 
 # 以下を.bashrcに追加
 # export PATH="/usr/local/cuda/bin:$PATH"
