@@ -53,8 +53,8 @@ sudo dpkg -i virtualgl_*_amd64.deb
 ## $ sudo systemctl start graphical.target
 ## $ sudo systemctl isolate graphical.target
 
-# おまじない（やらなくていい？)
-# $ xauth merge /etc/opt/VirtualGL/vgl_xauth_key
+# おまじない（入力するとフリーズ?)
+### $ xauth merge /etc/opt/VirtualGL/vgl_xauth_key
 
 # GUIに移動
 # install turboVNC
