@@ -47,7 +47,8 @@ sudo dpkg -i virtualgl_*_amd64.deb
 # sudo systemctl start lightdm
 
 # --- ubuntu 18.04 ---
-# $ sudo systemctl start graphical.target
+### $ sudo systemctl start graphical.target
+# $ sudo systemctl isolate graphical.target
 
 # おまじない（やらなくていい？)
 # $ xauth merge /etc/opt/VirtualGL/vgl_xauth_key
