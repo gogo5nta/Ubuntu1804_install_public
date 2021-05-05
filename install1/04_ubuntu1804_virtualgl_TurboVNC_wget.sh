@@ -35,8 +35,10 @@ sudo dpkg -i virtualgl_*_amd64.deb
 
 # --- ubuntu 18.04 ---
 # Ctl + Alt + F3でCUIに移動。事前に文字化け対策必要
-# sudo systemctl isolate multi-user.target
- 
+# sudo systemctl stop gdm
+## sudo systemctl isolate multi-user.target
+
+
 # setup virtualgl
 # 途中の質問は右を参考 https://virtualgl.org/vgldoc/2_2_1/#hd005001
 # 1, y, y, y, x 
@@ -47,8 +49,9 @@ sudo dpkg -i virtualgl_*_amd64.deb
 # sudo systemctl start lightdm
 
 # --- ubuntu 18.04 ---
-### $ sudo systemctl start graphical.target
-# $ sudo systemctl isolate graphical.target
+# sudo systemctl start gdm
+## $ sudo systemctl start graphical.target
+## $ sudo systemctl isolate graphical.target
 
 # おまじない（やらなくていい？)
 # $ xauth merge /etc/opt/VirtualGL/vgl_xauth_key
