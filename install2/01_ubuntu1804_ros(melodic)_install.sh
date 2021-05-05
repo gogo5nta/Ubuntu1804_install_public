@@ -126,6 +126,7 @@ echo "## Add the catkin_workspace to your ROS environment"
 echo "## Add the catkin_workspace to your ROS environment" >> ~/.bashrc
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+source ~/catkin_ws/devel/setup.bash
 
 ## Check the ROS environment variables
 echo "## Check the ROS environment variables"
