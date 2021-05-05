@@ -1,15 +1,15 @@
 #!/bin/bash
 # update 2021.05.05
 
-echo "•¶š‰»‚¯‘Îô .bashrc‚Ì––’[‚É‹L“ü"
-echo '# •¶š‰»‚¯‘Îô .bashrc‚Ì––’[‚É‹L“ü' >> ~/.bashrc
+echo "æ–‡å­—åŒ–ã‘å¯¾ç­– .bashrcã®æœ«ç«¯ã«è¨˜å…¥"
+echo '# æ–‡å­—åŒ–ã‘å¯¾ç­– .bashrcã®æœ«ç«¯ã«è¨˜å…¥' >> ~/.bashrc
 echo 'case $TERM in' >> ~/.bashrc
 echo '      linux) LANG=C ;;' >> ~/.bashrc
 echo '      *)       LANG=ja_JP.UTF-8;;' >> ~/.bashrc
 echo 'esac' >> ~/.bashrc
 
 # -----------------------------------------------------------------------------
-# Ubuntu18.04‚Évirtualgl‚ÆTurbovnc‚ğƒCƒ“ƒXƒg[ƒ‹
+# Ubuntu18.04ã«virtualglã¨Turbovncã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 # URL1: https://qiita.com/exthnet/items/dcb0bd94f09a2b4c9835
 # URL2: https://qiita.com/Shunmo17/items/c2e21af5d5f609c01b08
 # URL3: https://geraniums.hatenablog.com/entry/2018/05/25/151153
@@ -26,19 +26,19 @@ echo "# install virtualgl"
 sudo dpkg -i virtualgl_*_amd64.deb
 
 # -----------------------------------------------------------------------------
-# *** ‚±‚±‚©‚ç‚ÍCUI‚ÅÀ{ ***
+# *** ã“ã“ã‹ã‚‰ã¯CUIã§å®Ÿæ–½ ***
 # -----------------------------------------------------------------------------
 # stop desktop
 # --- ubuntu 16.04 ---
-# Ctl + Alt + F1‚ÅCUI‚ÉˆÚ“®B–‘O‚É•¶š‰»‚¯‘Îô•K—v
+# Ctl + Alt + F1ã§CUIã«ç§»å‹•ã€‚äº‹å‰ã«æ–‡å­—åŒ–ã‘å¯¾ç­–å¿…è¦
 # sudo systemctl stop lightdm
 
 # --- ubuntu 18.04 ---
-# Ctl + Alt + F3‚ÅCUI‚ÉˆÚ“®B–‘O‚É•¶š‰»‚¯‘Îô•K—v
+# Ctl + Alt + F3ã§CUIã«ç§»å‹•ã€‚äº‹å‰ã«æ–‡å­—åŒ–ã‘å¯¾ç­–å¿…è¦
 # sudo systemctl isolate multi-user.target
  
 # setup virtualgl
-# “r’†‚Ì¿–â‚Í‰E‚ğQl https://virtualgl.org/vgldoc/2_2_1/#hd005001
+# é€”ä¸­ã®è³ªå•ã¯å³ã‚’å‚è€ƒ https://virtualgl.org/vgldoc/2_2_1/#hd005001
 # 1, y, y, y, x 
 # $ sudo /opt/VirtualGL/bin/vglserver_config
 
@@ -49,36 +49,38 @@ sudo dpkg -i virtualgl_*_amd64.deb
 # --- ubuntu 18.04 ---
 # $ sudo systemctl start graphical.target
 
-# ‚¨‚Ü‚¶‚È‚¢i‚â‚ç‚È‚­‚Ä‚¢‚¢H)
+# ãŠã¾ã˜ãªã„ï¼ˆã‚„ã‚‰ãªãã¦ã„ã„ï¼Ÿ)
 # $ xauth merge /etc/opt/VirtualGL/vgl_xauth_key
 
-# GUI‚ÉˆÚ“®
+# GUIã«ç§»å‹•
 # install turboVNC
 # $ sudo dpkg -i turbovnc_*_amd64.deb
  
 # start TurboVNC
-# ‰‰ñ‚ÍƒpƒXƒ[ƒh“o˜^BƒpƒXƒ[ƒh•¶š—ñ’·‚ª8‚É§ŒÀ‚³‚ê‚Ä‚¢‚é‚Ì‚É’ˆÓ
+# åˆå›ã¯ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ç™»éŒ²ã€‚ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰æ–‡å­—åˆ—é•·ãŒ8ã«åˆ¶é™ã•ã‚Œã¦ã„ã‚‹ã®ã«æ³¨æ„
 # $ /opt/TurboVNC/bin/vncserver -depth 24
 
-# ‹N“®’†‚ÌVNC‚ğŠm”F
-# Ql:https://qiita.com/Sawahashi/items/156be0baaf6384884f3d
+# èµ·å‹•ä¸­ã®VNCã‚’ç¢ºèª
+# å‚è€ƒ:https://qiita.com/Sawahashi/items/156be0baaf6384884f3d
 # $ /opt/TurboVNC/bin/vncserver -list
 
 # stop TurboVNC
 # $ /opt/TurboVNC/bin/vncserver -kill :1
 
-# windows‚ÅƒƒOƒCƒ“‚·‚é
-# ubuntu‘¤‚Ì/home/username/.vnc/xxx.log‚Éƒ|[ƒg”Ô†‚ğ‹LÚ(—á:5901‚È‚Ç)
+# windowsã§TurboVNCã«ã‚ˆã‚Šãƒ­ã‚°ã‚¤ãƒ³ã™ã‚‹æ™‚
+# https://sourceforge.net/projects/turbovnc/files/2.2.6/
+# ä¸Šè¨˜URLã‹ã‚‰TurboVNC-2.2.6-x64.exeã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ï¼†ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ï¼†TurboVNCã‚’èµ·å‹•
+# ubuntuå´ã®/home/username/.vnc/xxx.logã«ãƒãƒ¼ãƒˆç•ªå·ã‚’è¨˜è¼‰(ä¾‹:5901ãªã©)
 
-# š’ˆÓš vnc‚ğƒƒOƒCƒ“‚µ‚Ä•‰æ–Ê‚ªo‚½‚ç(anacondaƒCƒ“ƒXƒg[ƒ‹Œã)
-# ‚±‚Ìê‡‚Í Anaconda ‚ªˆ«‚³‚ğ‚µ‚Ä‚¢‚é‚æ‚¤‚¾‚ªAAnaconda ‚ğg‚Á‚Ä‚¢‚È‚¢ê‡‚Å‚à“¯—l‚È–â‘è‚ª‹N‚±‚é‚±‚Æ‚ª‚ ‚éB
+# â˜…æ³¨æ„â˜… vncã‚’ãƒ­ã‚°ã‚¤ãƒ³ã—ã¦é»’ç”»é¢ãŒå‡ºãŸã‚‰(anacondaã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¾Œ)
+# ã“ã®å ´åˆã¯ Anaconda ãŒæ‚ªã•ã‚’ã—ã¦ã„ã‚‹ã‚ˆã†ã ãŒã€Anaconda ã‚’ä½¿ã£ã¦ã„ãªã„å ´åˆã§ã‚‚åŒæ§˜ãªå•é¡ŒãŒèµ·ã“ã‚‹ã“ã¨ãŒã‚ã‚‹ã€‚
 # http://penguinitis.g1.xrea.com/computer/linux/VNC.html
-#@«
-#Anaconda‚ğƒCƒ“ƒXƒg[ƒ‹ŒãA.bashrc‚ÌˆÈ‰º‚ªƒRƒƒ“ƒg‚µ‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN
+#ã€€â†“
+#Anacondaã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¾Œã€.bashrcã®ä»¥ä¸‹ãŒã‚³ãƒ¡ãƒ³ãƒˆã—ã¦ã„ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 ##export PATH="/root/anaconda3/bin:$PATH"
 
-# --- ‚±‚±‚©‚ç‚Í•K—v‚È‚çÀ{ ---
+# --- ã“ã“ã‹ã‚‰ã¯å¿…è¦ãªã‚‰å®Ÿæ–½ ---
 # make alias
-# turbovnc‚Ì‹N“®ƒGƒCƒŠƒAƒX‚ğì¬. nano ~/.bashrc‚ğÀs‚µ
+# turbovncã®èµ·å‹•ã‚¨ã‚¤ãƒªã‚¢ã‚¹ã‚’ä½œæˆ. nano ~/.bashrcã‚’å®Ÿè¡Œã—
 # alias TVNC='/opt/TurboVNC/bin/vncserver -depth 24' 
 
