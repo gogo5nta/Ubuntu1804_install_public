@@ -1,5 +1,5 @@
 #!/bin/bash
-# update 2021.04.24
+# update 2021.05.06
 
 ## *** Reffer ***
 ## ・Ubuntu18.04: ROS Melodicのインストール
@@ -100,6 +100,7 @@ rosdep update
 # Environment setup
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+source /opt/ros/melodic/setup.bash
 
 ## Environment setup
 ## If you just want to change the environment of your current shell, instead of the above you can type:
@@ -125,8 +126,8 @@ catkin build
 echo "## Add the catkin_workspace to your ROS environment"
 echo "## Add the catkin_workspace to your ROS environment" >> ~/.bashrc
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-source ~/catkin_ws/devel/setup.bash
+#source ~/.bashrc
+#source ~/catkin_ws/devel/setup.bash
 
 ## Check the ROS environment variables
 echo "## Check the ROS environment variables"
