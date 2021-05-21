@@ -1,24 +1,24 @@
 #!/bin/bash
 # update 2021.05.20
 
-## –‘O‚ÉuUbuntu18.04: Kobuki‚ğROS Melodic‚Å“®‚©‚·v‚ğQÆ‚µAÀ‹@‚Å“®‚©‚¹‚é–
+## äº‹å‰ã«ã€ŒUbuntu18.04: Kobukiã‚’ROS Melodicã§å‹•ã‹ã™ã€ã‚’å‚ç…§ã—ã€å®Ÿæ©Ÿã§å‹•ã‹ã›ã‚‹äº‹
 ## URL: https://demura.net/education/lecture/16609.html
 
-## QluROS Melodic: ƒVƒ~ƒ…ƒŒ[ƒ^‚ÅTutlebot2 (Kobuki)‚ğ“®‚©‚»‚¤Iv
+## å‚è€ƒã€ŒROS Melodic: ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿ã§Tutlebot2 (Kobuki)ã‚’å‹•ã‹ãã†ï¼ã€
 ## URL: https://demura.net/education/lecture/16767.html
 
-## “®ìŠm”FŠÂ‹«
+## å‹•ä½œç¢ºèªç’°å¢ƒ
 ## $ cat /etc/os-release
 ## -----------------------
-## #Ubuntu 18.04.5  (18.0.4.3 JP‚ğƒCƒ“ƒXƒg[ƒ‹‚µAupdate)
+## #Ubuntu 18.04.5  (18.0.4.3 JPã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã€update)
 ##
 ## $ sudo uname -a
 ## -----------------------
 ## linux CF-S10 5.4.0-72-generic
 
-echo "ROS‚ÌƒVƒ~ƒ…ƒŒ[ƒ^Gazebo‚ğ‹N“®(‰‰ñ‚Í5•ª’ö“x‚©‚©‚é)"
-$ roslaunch turtlebot_gazebo turtlebot_world.launch
+echo "ROSã®ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿Gazeboã‚’èµ·å‹•(åˆå›ã¯5åˆ†ç¨‹åº¦ã‹ã‹ã‚‹)"
+roslaunch turtlebot_gazebo turtlebot_world.launch
 
-# •Ê‚Ì’[––‚ğŠJ‚«AƒL[ƒ{[ƒh‚©‚çƒƒ{ƒbƒg‚ğ‘€c‚·‚é‚½‚ß‚Ìlaunchƒtƒ@ƒCƒ‹‚ğ‹N“®B
-# ƒ}ƒEƒX‚ÌƒJ[ƒ\ƒ‹‚ªturtlebot_teleop_key.launch‚ğ‹N“®‚µ‚½’[––ã‚É‚È‚¯‚ê‚Î“®‚©‚È‚¢‚Ì‚Å’ˆÓB
+# åˆ¥ã®ç«¯æœ«ã‚’é–‹ãã€ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰ãƒ­ãƒœãƒƒãƒˆã‚’æ“ç¸¦ã™ã‚‹ãŸã‚ã®launchãƒ•ã‚¡ã‚¤ãƒ«ã‚’èµ·å‹•ã€‚
+# ãƒã‚¦ã‚¹ã®ã‚«ãƒ¼ã‚½ãƒ«ãŒturtlebot_teleop_key.launchã‚’èµ·å‹•ã—ãŸç«¯æœ«ä¸Šã«ãªã‘ã‚Œã°å‹•ã‹ãªã„ã®ã§æ³¨æ„ã€‚
 # $ roslaunch turtlebot_teleop keyboard_teleop.launch
