@@ -1,65 +1,74 @@
 #!/bin/bash
 # update 2021.05.20
 
-## Šî–{‚ÍuUbuntu18.04: Kobuki‚ğROS Melodic‚Å“®‚©‚·v‚ğQÆ
+## åŸºæœ¬ã¯ã€ŒUbuntu18.04: Kobukiã‚’ROS Melodicã§å‹•ã‹ã™ã€ã‚’å‚ç…§
 ## URL: https://demura.net/education/lecture/16609.html
 
-## “®ìŠm”FŠÂ‹«
+## å‹•ä½œç¢ºèªç’°å¢ƒ
 ## $ cat /etc/os-release
 ## -----------------------
-## #Ubuntu 18.04.5  (18.0.4.3 JP‚ğƒCƒ“ƒXƒg[ƒ‹‚µAupdate)
+## #Ubuntu 18.04.5  (18.0.4.3 JPã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã€update)
 ##
 ## $ sudo uname -a
 ## -----------------------
 ## linux CF-S10 5.4.0-72-generic
 
-## --- ŠÂ‹«\’z‚Ü‚Å ---
-echo "ì‹ÆƒXƒy[ƒX‚Ìì¬i‚È‚¯‚ê‚Îj"
+## --- ç’°å¢ƒæ§‹ç¯‰ã¾ã§ ---
+echo "ä½œæ¥­ã‚¹ãƒšãƒ¼ã‚¹ã®ä½œæˆï¼ˆãªã‘ã‚Œã°ï¼‰"
 source /opt/ros/melodic/setup.bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 catkin_init_workspace
 
-echo "Turtlebot2ŠÖ˜AƒpƒbƒP[ƒW‚ÌƒCƒ“ƒXƒg[ƒ‹"
+echo "Turtlebot2é–¢é€£ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«"
 cd  ~/catkin_ws
 curl -sLf https://raw.githubusercontent.com/gaunthan/Turtlebot2-On-Melodic/master/install_basic.sh | bash
 
-echo "•K—v‚ÈƒpƒbƒP[ƒW‚ğƒCƒ“ƒXƒg[ƒ‹"
+echo "å¿…è¦ãªãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«"
 sudo apt install python-catkin-tools
 sudo apt-get install ros-melodic-kobuki-* -y
 sudo apt-get install ros-melodic-ecl-streams -y
 sudo apt install ros-melodic-joy
 
-echo "’Ç‰ÁƒCƒ“ƒXƒg[ƒ‹(laptop_battery_monitor ƒpƒbƒP[ƒW)"
-cd ~/catkin_ws/src 
-git clone https://github.com/ros-drivers/linux_peripheral_interfaces.git
-
-echo "ƒrƒ‹ƒh"
+#è¿½åŠ ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«(laptop_battery_monitor ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸)å‰ã«ã€ã“ã®çŠ¶æ…‹ã§catkin buildã—ãªã„ã¨ã‚¨ãƒ©ãƒ¼ãŒã§ã‚‹
+echo "ãƒ“ãƒ«ãƒ‰"
 cd ~/catkin_ws
 catkin build
 
-## --- ƒL[ƒ{[ƒh‚É‚æ‚é§Œä ---
-#ƒm[ƒgƒpƒ\ƒRƒ“‚ÆKobuki‚ğÚ‘±
+echo "è¿½åŠ ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«(laptop_battery_monitor ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸)"
+cd ~/catkin_ws/src 
+git clone https://github.com/ros-drivers/linux_peripheral_interfaces.git
+cd ~/catkin_ws
+catkin build
 
-#ƒ^[ƒ~ƒiƒ‹1
+## --- ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã«ã‚ˆã‚‹åˆ¶å¾¡ ---
+#ãƒãƒ¼ãƒˆãƒ‘ã‚½ã‚³ãƒ³ã¨Kobukiã‚’æ¥ç¶š
+
+#ã‚¿ãƒ¼ãƒŸãƒŠãƒ«1
 #$ source ~/catkin_ws/devel/setup.bash
 #$ roslaunch turtlebot_bringup minimal.launch
 
-#ƒ^[ƒ~ƒiƒ‹2
+#ä¸Šè¨˜ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿâ¾ã—ã¦ã€â€laptop_battery_monitor ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒãªã„â€ã¨æ€’ã‚‰ã‚ŒãŸæ™‚ã®å¯¾å‡¦æ³•
+#echo "è¿½åŠ ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«(laptop_battery_monitor ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸)"
+#cd ~/catkin_ws/src 
+#git clone https://github.com/ros-drivers/linux_peripheral_interfaces.git
+#cd ~/catkin_ws
+#catkin build
+
+#ã‚¿ãƒ¼ãƒŸãƒŠãƒ«2
 #$ source ~/catkin_ws/devel/setup.bash
 #$ roslaunch turtlebot_teleop  keyboard_teleop.launch
 
-#ˆÈ‰º‚ÌƒL[ƒ{[ƒh‘€ì‚É‚æ‚èTurtlebot2‚ğ‘€ì
-#@u i o
-#@j k l
-#@m , .
-#i: ‘Oi
-#u: ¶‘O•ûŒü‚Öi‚Ş
-#j: ¶‰ñ“]
-#o: ‰E‘O•ûŒü‚Öi‚Ş
-#l: ‰E‰ñ“]
-#m: ¶Œã•ûŒü‚Öi‚Ş
-#,: Œãi
-#.  ‰EŒã•ûŒü‚Öi‚Ş
-#k: ’â~
-
+#ä»¥ä¸‹ã®ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰æ“ä½œã«ã‚ˆã‚ŠTurtlebot2ã‚’æ“ä½œ
+#ã€€u i o
+#ã€€j k l
+#ã€€m , .
+#i: å‰é€²
+#u: å·¦å‰æ–¹å‘ã¸é€²ã‚€
+#j: å·¦å›è»¢
+#o: å³å‰æ–¹å‘ã¸é€²ã‚€
+#l: å³å›è»¢
+#m: å·¦å¾Œæ–¹å‘ã¸é€²ã‚€
+#,: å¾Œé€²
+#.  å³å¾Œæ–¹å‘ã¸é€²ã‚€
+#k: åœæ­¢
