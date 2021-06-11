@@ -1,30 +1,29 @@
 #!/bin/bash
 # update 2021.06.11
 
-#=============================================================
-#UbuntuでIntel Realsense D415を使えるようにするまで(ROSあり・なし両方)
-#=============================================================
-#   https://qiita.com/kei_mo/items/c0387b7d277948451881
-
+# --- 参考 --------------------------------------------------------------
+# librealsenseのgithub
+# https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
+#
+# UbuntuでIntel Realsense D415を使えるようにするまで(ROSあり・なし両方)
+# https://qiita.com/kei_mo/items/c0387b7d277948451881
+# ------------------------------------------------------------------------
 
 # 公開鍵を登録
 echo "公開鍵を登録"
 
+#公開鍵でおかしくなった場合、librelasenseのgithubで再度確認
+#https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
 #一般：
-sudo apt-key adv --keyserver keys.gnupg.net --recv-key C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C8B3A55A6F3EFCDE
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
 
 #Proxy内(会社)
-#sudo -E apt-key adv --keyserver keys.gnupg.net --recv-key C8B3A55A6F3EFCDE || sudo -E apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C8B3A55A6F3EFCDE
-
+#export http_proxy="http://<proxy>:<port>"
+#sudo -E apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
 
 # サーバーをレポジトリリストに登録
-echo "サーバーをレポジトリリストに登録(Ubuntu18)"
-# ubuntu18
-sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo bionic main" -u
-
-# ubuntu16
-# sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u
-
+echo "サーバーをレポジトリリストに登録"
+sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
 
 # ライブラリ(liblealsense2)をインストール
 echo "ライブラリ(liblealsense2)をインストール"
