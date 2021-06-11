@@ -45,9 +45,11 @@ sudo systemctl restart docker
 docker run hello-world 
 
 # docker-composeのインストール
-# https://docs.docker.jp/compose/install.html#linux
-sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+# URL:https://qiita.com/hgoj/items/1ba050c7d73e0dd5ef90
+# URL:https://docs.docker.jp/compose/install.html#linux　　←古い
+ 
+sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # docker-composeの確認
-docker-compose --version
+docker-compose -v
