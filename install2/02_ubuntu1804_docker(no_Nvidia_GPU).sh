@@ -2,17 +2,17 @@
 # update 2021.05.20
 
 # --------------------------------------------------------
-# Docker‚ÌƒCƒ“ƒXƒg[ƒ‹ (Ubuntu 18.04 LTS)
+# Dockerã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ« (Ubuntu 18.04 LTS)
 # https://www.aiprogrammers.net/entry/2020/04/18/164548
 #
-# NVIDIA container toolkit‚ğg‚Á‚ÄAdocker‚ÌƒRƒ“ƒeƒiã‚Åcuda‚ğ“®‚©‚·(“r’†‚Ü‚Å)
+# NVIDIA container toolkitã‚’ä½¿ã£ã¦ã€dockerã®ã‚³ãƒ³ãƒ†ãƒŠä¸Šã§cudaã‚’å‹•ã‹ã™(é€”ä¸­ã¾ã§)
 # URL:https://qiita.com/Hiroaki-K4/items/c1be8adba18b9f0b4cef
 # --------------------------------------------------------
 
-# ŒÃ‚¢docker‚ğíœ
+# å¤ã„dockerã‚’å‰Šé™¤
 # sudo apt-get remove docker docker-engine docker.io containerd runc
 
-# Docker‚ğƒCƒ“ƒXƒg[ƒ‹
+# Dockerã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 sudo apt-get update
 sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -22,24 +22,29 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io -y
 
-# Šm”F(Docker)
+# ç¢ºèª(Docker)
 sudo docker run hello-world
 
-# Šm”F(Docker version)
+# ç¢ºèª(Docker version)
 docker -v
 
-# DockerƒRƒ}ƒ“ƒh‚ğsudo‚È‚µ‚ÅÀs‚·‚é•û–@
+# Dockerã‚³ãƒãƒ³ãƒ‰ã‚’sudoãªã—ã§å®Ÿè¡Œã™ã‚‹æ–¹æ³•
 # URL:https://insilico-notebook.com/docker-run-without-sudo/
 # URL:https://qiita.com/DQNEO/items/da5df074c48b012152ee
-# dockerƒOƒ‹[ƒv‚ª‚È‚¯‚ê‚Îì‚é
+# dockerã‚°ãƒ«ãƒ¼ãƒ—ãŒãªã‘ã‚Œã°ä½œã‚‹
 sudo groupadd docker
 
-# Œ»sƒ†[ƒU‚ğdockerƒOƒ‹[ƒv‚ÉŠ‘®‚³‚¹‚é
+# ç¾è¡Œãƒ¦ãƒ¼ã‚¶ã‚’dockerã‚°ãƒ«ãƒ¼ãƒ—ã«æ‰€å±ã•ã›ã‚‹
 sudo usermod -aG docker $USER 
 newgrp docker 
 
-# dockerƒf[ƒ‚ƒ“‚ğÄ‹N“®‚·‚é (CentOS7‚Ìê‡)
+# dockerãƒ‡ãƒ¼ãƒ¢ãƒ³ã‚’å†èµ·å‹•ã™ã‚‹ (CentOS7ã®å ´åˆ)
 sudo systemctl restart docker
 
 # test
 docker run hello-world 
+
+# docker-composeã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+# https://docs.docker.jp/compose/install.html#linux
+sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
