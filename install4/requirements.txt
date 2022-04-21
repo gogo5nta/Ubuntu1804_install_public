@@ -1,5 +1,0 @@
-### Ubuntu18.04.5 + ROS(melodic)
-numpy
-opencv-python == 4.2.0.32
-pyrealsense2
-argparse
