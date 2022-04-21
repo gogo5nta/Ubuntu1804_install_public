@@ -1,17 +1,14 @@
 #!/bin/bash
-# update 2021.06.11
+# Ubuntu20.04.4 + ROS(melodic)
+# update 2022.04.19
 
-## --- realsense SR305‚ğ˜^‰æ ---
+echo "start rec realsense D435i"
+echo "END: windowsä¸Šã§[esc]"
+python3 realsense_recorder_D435i.py --record_imgs --output_folder ./data
 
-echo "start rec realsense SR305"
-echo "END: windowsã‚Å[esc]"
-python realsense_recorder_SR305.py --record_imgs --output_folder ./data
-
-#$ python realsense_recorder_SR305.py --record_imgs --output_folder ./data
-#
-# ./data‚ÉˆÈ‰º‚ª¶¬‚³‚ê‚é
-#@@ErgbƒtƒHƒ‹ƒ_
-#@@EdepthƒtƒHƒ‹ƒ_
-#@@Ergb.txt
-#@@Edepth.txt
-#@@Ecamera_intrinsic.json
+# ./dataã«ä»¥ä¸‹ãŒç”Ÿæˆã•ã‚Œã‚‹
+#ã€€ã€€ãƒ»rgbãƒ•ã‚©ãƒ«ãƒ€
+#ã€€ã€€ãƒ»depthãƒ•ã‚©ãƒ«ãƒ€
+#ã€€ã€€ãƒ»rgb.txt
+#ã€€ã€€ãƒ»depth.txt
+#ã€€ã€€ãƒ»camera_intrinsic.json
