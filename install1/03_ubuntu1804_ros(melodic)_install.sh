@@ -1,5 +1,5 @@
 #!/bin/bash
-# update 2021.05.06
+# update 2022.04.21
 
 ## *** Reffer ***
 ## ・Ubuntu18.04: ROS Melodicのインストール
@@ -121,6 +121,9 @@ catkin init
 echo "## bulid catkin_ws"
 cd ~/catkin_ws
 catkin build
+
+# catkin build > catkin init
+# catkin_make  > catkin_init 
 
 ## Add the catkin_workspace to your ROS environment
 echo "## Add the catkin_workspace to your ROS environment"
