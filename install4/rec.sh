@@ -1,5 +1,5 @@
 #!/bin/bash
-# Ubuntu20.04.4 + ROS(melodic)
+# Ubuntu18.04 + ROS(melodic)
 # update 2022.04.19
 
 echo "start rec realsense D435i"
