@@ -26,6 +26,13 @@ sudo apt -y install openssh-server
 echo "# install good tool gnome-tweaks"
 sudo apt -y install gnome-tweaks
 
+# install VSCode
+#https://qiita.com/yoshiyasu1111/items/e21a77ed68b52cb5f7c8
+echo "# install VSCode"
+sudo apt -y install curl
+curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o vscode.deb
+sudo apt-get install -y ./vscode.deb
+
 # install imagemagic
 sudo apt -y install imagemagick
 
